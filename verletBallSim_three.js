@@ -196,10 +196,8 @@ function init() {
     });
     
     // --- ROBUST RESIZE HANDLING ---
-    const resizeObserver = new ResizeObserver(() => {
-        updateLayout();
-    });
-    resizeObserver.observe(canvas);
+    // Listen for the window to resize to reliably handle orientation changes.
+    window.addEventListener('resize', updateLayout);
     
     // --- SHADOWS ---
     renderer.shadowMap.enabled = true;
