@@ -1,5 +1,4 @@
-# Verlet Ball Physics Demo - V.3.01
-Verlet Ball Physics Simulation using Three.JS
+# Verlet Ball Physics Demo using Three.JS - V.3.01
 
 JavaScript Ball Physics 2D Simulation using Verlet Integration. Project goal is to learn JavaScript along with physics collision simulaton. This demo is a work in progress and not intended to be a robust application for every device / Web browser, but should work on most devices. Please submit an Issue if it is not working and include info on the device and browser version. Tested on iOS iPhone, iPAD, and Google Android Pixel 11.
 
