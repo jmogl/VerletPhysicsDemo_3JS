@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ball Physics Demo - Three.js Version</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrollbars */
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        #simulation-canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* z-index: -1; was removed as it was hiding the canvas */
+        }
+
+        .ui-element {
+            position: absolute;
+            z-index: 10; /* Brings all UI elements to the front */
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #enableTiltButton {
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+          /* Updated for transparency */
+          background: linear-gradient(to bottom, rgba(109, 223, 109, 0.8), rgba(76, 175, 80, 0.8));
+          color: white;
+          border: 1px solid rgba(62, 142, 65, 0.8);
+          box-shadow: 0 4px rgba(62, 142, 65, 0.8);
+          transition: all 0.1s ease-in-out;
+          cursor: pointer;
+        }
+
+        #enableTiltButton:hover {
+          background: linear-gradient(to bottom, rgba(127, 251, 127, 0.85), rgba(69, 160, 73, 0.85));
+        }
+
+        #enableTiltButton:active {
+          background: linear-gradient(to bottom, rgba(69, 160, 73, 0.9), rgba(62, 142, 65, 0.9));
+          box-shadow: 0 2px rgba(46, 112, 49, 0.9);
+          transform: translateX(-50%) translateY(2px);
+        }
+
+        #fpscounter {
+          top: 10px;
+          left: 10px;
+          font-size: 20px;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #tilttext {
+          top: 40px;
+          left: 10px;
+          font-size: 16px;
+        }
+
+        #position-display {
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="simulation-canvas"></canvas>
+
+    <div id="fpscounter" class="ui-element">0 FPS</div>
+    <button id="enableTiltButton" class="ui-element">Enable Tilt</button>
+    <div id="tilttext" class="ui-element">Version: 3.0-beta 2</div>
+    <div id="position-display" class="ui-element"></div>
+
+    <script src="./lib/mainloop.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="verletBallSim_three.js"></script>
+</body>
+</html>
